@@ -18,8 +18,8 @@
         return $app['twig']->render('places.html.twig', array('places' => Place::getAll()));
     });
 
-    $app->post("/names", function() use ($app) {
-        $task = new Place($_POST['names']);
+    $app->post("/places", function() use ($app) {
+        $task = new Place($_POST['name']);
         $task->save();
         return $app['twig']->render('create_place.html.twig', array('newplace' => $task));
 
@@ -27,7 +27,7 @@
 
     $app->post("/delete_places", function() use ($app) {
         Place::deleteAll();
-        return $app['twig']->render('delete_tasks.html.twig');
+        return $app['twig']->render('delete_places.html.twig');
     });
 
     return $app;
