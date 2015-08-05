@@ -9,6 +9,7 @@
         <ul>
             {% for place in places %}
                 <li>{{ place.getName }}</li>
+                <li>{{ place.getDuration }}</li>
             {% endfor %}
         </ul>
     {% endif %}
@@ -17,7 +18,10 @@
         <label for='name'>Place Name</label>
         <input id='name' name='name' type='text'>
 
-        <button type='submit'>Add place</button>
+        <label for='duration'>Duration of stay</label>
+        <input id='duration' name='duration' type='text'>
+
+        <button type='submit'>Submit</button>
     </form>
 
     <form action='/delete_places' method='post'>

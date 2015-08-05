@@ -19,9 +19,9 @@
     });
 
     $app->post("/places", function() use ($app) {
-        $task = new Place($_POST['name']);
-        $task->save();
-        return $app['twig']->render('create_place.html.twig', array('newplace' => $task));
+        $place = new Place($_POST['name'], $_POST['duration']);
+        $place->save();
+        return $app['twig']->render('create_place.html.twig', array('newplace' => $place));
 
     });
 
