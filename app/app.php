@@ -15,13 +15,13 @@
     ));
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('places.html.twig', array('places' => Task::getAll()));
+        return $app['twig']->render('places.html.twig', array('places' => Place::getAll()));
     });
 
     $app->post("/names", function() use ($app) {
         $task = new Place($_POST['names']);
         $task->save();
-        return $app ['twig']->render('create_place.html.twig', array('newplace' => $task));
+        return $app['twig']->render('create_place.html.twig', array('newplace' => $task));
 
     });
 
