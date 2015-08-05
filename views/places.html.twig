@@ -10,6 +10,7 @@
             {% for place in places %}
                 <li>{{ place.getName }}</li>
                 <li>{{ place.getDuration }}</li>
+                <li><img src='{{ place.getImage }}'></li>
             {% endfor %}
         </ul>
     {% endif %}
@@ -20,6 +21,9 @@
 
         <label for='duration'>Duration of stay</label>
         <input id='duration' name='duration' type='text'>
+
+        <label for='image'>Image of place</label>
+        <input id='image' name='image' type='text'>
 
         <button type='submit'>Submit</button>
     </form>

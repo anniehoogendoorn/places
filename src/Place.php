@@ -3,11 +3,13 @@
     {
         private $name;
         private $duration;
+        private $image;
 
-        function __construct($name, $duration)
+        function __construct($name, $duration, $image)
         {
             $this->name = $name;
             $this->duration = $duration;
+            $this->image = $image;
         }
 
         function setName($new_name)
@@ -28,6 +30,16 @@
         function getDuration()
         {
             return $this->duration;
+        }
+
+        function setImage($new_image)
+        {
+            $this->image = $new_image;
+        }
+
+        function getImage()
+        {
+            return $this->image;
         }
 
         function save()
